@@ -1,0 +1,296 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f8f8;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow-x: hidden;
+}
+
+.admin-panel-page-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex: 1;
+  padding-top: 4vh;
+  padding-bottom: 5vh;
+  width: 100%;
+}
+
+.user-panel-page-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex: 1;
+  padding-top: 14vh;
+  padding-bottom: 5vh;
+  width: 100%;
+}
+
+.user-panel-page,
+.admin-panel-page {
+  width: 100%;
+  max-width: 1200px;
+  padding: 20px;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  background-color: white;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  justify-content: space-between;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: 10vh;
+}
+
+.logo-button {
+  display: flex;
+  align-items: center;
+  color: #333;
+  text-decoration: none;
+  cursor: pointer;
+  margin-left: 10vh;
+}
+
+.logo-button:focus, .logo-button:hover {
+  opacity: 0.8;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.logo {
+  height: 50px;
+  margin-right: 10px;
+}
+
+.logo-text {
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 32px;
+  margin: 0;
+}
+
+.tab-container {
+  display: flex;
+  justify-content: flex-end;
+  flex-grow: 1;
+}
+
+.left-tab-container {
+  display: flex;
+  font-size: 16px;
+}
+
+.tab {
+  cursor: pointer;
+  padding: 10px;
+  transition: color 0.3s, transform 0.2s;
+  color: #333;
+}
+
+.tab.active, .tab:hover {
+  color: #6DB33F;
+  transform: scale(1.05);
+}
+
+/* Кнопка перехода на страницу администратора */
+.user-panel-button,
+.admin-panel-button {
+  display: inline-block;
+  text-decoration: none;
+  color: white;
+  background-color: #6DB33F;
+  padding: 10px 20px;
+  border-radius: 20px;
+  text-align: center;
+  margin-left: 30px;
+}
+
+.user-panel-button:hover,
+.admin-panel-button:hover {
+  background-color: #6DB33F;
+}
+
+/* Поле ввода */
+#post-input {
+  font-size: 14px;
+  height: 64px; /* Высота поля ввода */
+  line-height: 34px; /* Центрируем текст по вертикали */
+  padding: 15px;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+  box-sizing: border-box;
+  resize: none; /* Отключает ручное изменение размера */
+  width: 100%; /* Ширина на 100% */
+  max-width: 1240px; /* Максимальная ширина */
+  overflow-y: hidden; /* Убирает вертикальную прокрутку */
+  line-height: 1.2; /* Уменьшаем межстрочный интервал */
+}
+
+/* Контейнер ввода */
+.post-input-container {
+  border: 1px solid gray;
+  background-color: white;
+  min-height: 20px;
+  border-radius: 20px;
+  margin-top: 80px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 15px;
+  max-width: 1240px;
+  position: relative;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+}
+
+/* Кнопка "Опубликовать" */
+.publish-button {
+  background-color: #ffffff00;
+  border: none;
+  color: gray;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s, transform 0.2s;
+  white-space: nowrap; /* Текст на кнопке не будет переноситься */
+  padding: 10px 20px; /* Пространство вокруг текста на кнопке */
+}
+
+/* Контейнер для кнопки "Опубликовать" */
+.publish-button-container {
+  display: flex;
+  justify-content: flex-end;  /* Кнопка выравнивается по правому краю */
+  align-items: flex-end;      /* Кнопка выравнивается по нижнему краю */
+  margin-top: 10px;
+  margin-bottom: 20px;  /* Пространство снизу, чтобы кнопка не была прямо у края */
+  position: relative;  /* Позволяет расположить кнопку по отношению к контейнеру */
+}
+
+/* Стили для плейсхолдера */
+#post-input::placeholder {
+  color: #888; /* Цвет плейсхолдера */
+  text-align: left; /* Горизонтальное выравнивание плейсхолдера */
+  line-height: 34px; /* Центрируем плейсхолдер по вертикали */
+}
+
+.publish-button:hover {
+  transform: scale(1.05);
+}
+
+footer {
+  text-align: center;
+  padding: 10px;
+  background-color: white;
+  box-shadow: 0px -2px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+  font-size: 14px;
+}
+
+/* Стили для постов */
+.post {
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.post-body {
+  white-space: pre-wrap;  /* Сохраняет пробелы и переносы строк */
+  word-wrap: break-word;  /* Разбивает длинные слова на части, если они не помещаются */
+  overflow-wrap: break-word; /* Поддержка старых браузеров */
+}
+
+.post:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.post-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.post-date {
+  font-size: 12px;
+  color: #999;
+  text-align: right;
+  white-space: nowrap; /* Чтобы дата не переносилась */
+}
+
+.post-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+/* Стили для кнопок с иконками */
+.post-buttons img {
+  cursor: pointer;
+  transition: transform 0.2s, opacity 0.3s, filter 0.3s;
+}
+
+/* Кнопка "Закрепить" (pin) */
+.post-buttons .post-pin-button {
+  width: 10px;
+  height: 16px;
+}
+
+/* Кнопка "Редактировать" (edit) */
+.post-buttons .post-edit-button {
+  width: 16px;
+  height: 16px;
+}
+
+/* Кнопка "Удалить" (delete) */
+.post-buttons .post-delete-button {
+  width: 12px;
+  height: 16px;
+}
+
+/* При наведении они становятся зелёными */
+.post-buttons img:hover {
+  transform: scale(1.1);
+  opacity: 0.8;
+  filter: brightness(0) saturate(100%) invert(59%) sepia(22%) saturate(790%) hue-rotate(53deg) brightness(90%) contrast(95%);
+}
+
+/* При наведении кнопки меняют цвет на зелёный */
+.post-buttons img:hover {
+  transform: scale(1.1);
+  opacity: 0.8;
+  filter: brightness(0) saturate(100%) invert(59%) sepia(22%) saturate(790%) hue-rotate(53deg) brightness(90%) contrast(95%);
+}
+
+/* Закрепленный пост: иконка остаётся зелёной */
+.post-buttons .post-pin-button.pinned {
+  filter: brightness(0) saturate(100%) invert(59%) sepia(22%) saturate(790%) hue-rotate(53deg) brightness(90%) contrast(95%);
+}

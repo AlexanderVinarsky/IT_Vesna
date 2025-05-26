@@ -1,0 +1,348 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f8f8;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow-x: hidden;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  background-color: white;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.header-container {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  cursor: pointer;
+}
+
+.logo-button {
+  display: flex;
+  align-items: center;
+  color: #333;
+  text-decoration: none;
+  margin-left: 10vh;
+  cursor: pointer;
+}
+
+.logo-button:focus, .logo-button:hover {
+  opacity: 0.8;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  margin-left: 10vh;
+}
+
+.logo {
+  height: 50px;
+  margin-right: 10px;
+}
+
+.logo-text {
+  text-decoration: none;
+  font-weight: 600;
+  margin: 0;
+}
+
+.admin-nav {
+  display: flex;
+  gap: 30px;
+  font-size: 16px;
+  margin-left: 20px;
+}
+
+.tab {
+  cursor: pointer;
+  padding: 10px;
+  transition: color 0.3s, transform 0.2s;
+  color: #333;
+}
+
+.tab.active, .tab:hover {
+  color: #6DB33F;
+  transform: scale(1.05);
+}
+
+main {
+  padding: 90px 20px 90px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.admin-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  width: 80%;
+  max-width: 10000px;
+  margin: 0 auto;
+}
+
+.tabs {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  margin-top: 30px;
+}
+
+#subTabs {
+  display: flex;
+  gap: 20px;
+}
+
+.sub-tab {
+  cursor: pointer;
+  padding: 10px;
+  font-size: 14px;
+  color: #333;
+  transition: color 0.3s, transform 0.2s;
+}
+
+.sub-tab.active, .sub-tab:hover {
+  color: #6DB33F;
+  transform: scale(1.05);
+}
+
+.application-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.request, 
+#moderators-list li, 
+#nominations-list li, 
+#age-group-list li {
+  background-color: white;
+  padding: 15px;
+  border-radius: 20px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e0e0e0;
+  transition: transform 0.3s ease, max-height 0.4s ease-in-out, padding 0.4s ease;
+  overflow: hidden;
+  max-height: 80px;
+  cursor: pointer;
+}
+
+.request.expanded, 
+#moderators-list li.expanded, 
+#nominations-list li.expanded, 
+#age-group-list li.expanded {
+  max-height: 10000px;
+  padding: 15px;
+}
+
+.request:hover, 
+#moderators-list li:hover, 
+#nominations-list li:hover, 
+#age-group-list li:hover {
+  transform: scale(1.02);
+}
+
+.request.expanded .details, 
+#moderators-list li.expanded .details, 
+#nominations-list li.expanded .details, 
+#age-group-list li.expanded .details {
+  opacity: 1;
+  max-height: 10000px;
+  max-width: 10000px;
+  white-space: normal;
+  word-wrap: break-word;
+  overflow-wrap: anywhere;
+}
+
+.description {
+  white-space: pre-line;
+  word-wrap: break-word;
+  overflow-wrap: anywhere;
+}
+
+#moderators-list, 
+#nominations-list, 
+#age-group-list {
+  padding: 0;
+}
+
+#moderators-list li, 
+#nominations-list li, 
+#age-group-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#moderators-list li button, 
+#nominations-list li button, 
+#age-group-list li button {
+  background-color: #e74c3c;
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s;
+  margin-left: auto;
+}
+
+#moderators-list li button:hover, 
+#nominations-list li button:hover, 
+#age-group-list li button:hover {
+  background-color: #c0392b;
+}
+
+.moderator-form {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 0;
+  background-color: #f9f9f9;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.moderator-form .input-field {
+  padding: 10px 15px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  outline: none;
+  flex: 1;
+  border-radius: 0;
+}
+
+#moderator-name,
+#nomination-name,
+#age-group-name {
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border-right: none;
+}
+
+#moderator-email {
+  border-left: none;
+  border-right: none;
+}
+
+.moderator-form button {
+  padding: 10px 100px;
+  background-color: #6DB33F;
+  border: none;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 0 20px 20px 0;
+}
+
+.moderator-form button:hover {
+  background-color: #6DB33F;
+}
+
+.request-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+}
+
+.icon {
+  cursor: pointer;
+  transition: opacity 0.2s ease, filter 0.2s ease;
+  margin: 0 5px;
+}
+
+.icon:hover {
+  filter: brightness(0) saturate(100%) invert(32%) sepia(93%) saturate(3425%) hue-rotate(70deg) brightness(105%);
+}
+
+.icon-view-open:hover {
+  filter: none;
+}
+
+.buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+button {
+  background-color: #6DB33F;
+  border: none;
+  color: white;
+  padding: 7px 12px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+  background-color: #5A9E35;
+  transform: scale(1.05);
+}
+
+button:active {
+  background-color: #4F8E30;
+}
+
+.details {
+  margin-top: 10px;
+  padding: 10px;
+  border-top: 1px solid #ddd;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 0.3s ease-in-out, max-height 0.3s ease-in-out;
+}
+
+.details p {
+  margin: 5px 0;
+  font-size: 14px;
+}
+
+.details a {
+  color: #6DB33F;
+  text-decoration: none;
+}
+
+.details a:hover {
+  text-decoration: underline;
+}
+
+footer {
+  text-align: center;
+  padding: 10px;
+  background-color: white;
+  box-shadow: 0px -2px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+  font-size: 14px;
+}
+
+.application-list .request button {
+  display: inline-block;
+}

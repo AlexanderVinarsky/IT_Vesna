@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Пользовательская панель</title>
+    <base href="{{ url_for('static', filename='') }}">
+    <link rel="stylesheet" href="main/main.css">
+</head>
+<body>
+    <div class="user-panel-page-container">
+        <div class="user-panel-page">
+            <header>
+                <div class="header-container">
+                    <div class="logo-button" onclick="window.location.href = '/main/user'">
+                        <div class="logo-container">
+                            <img src="public/logo.png" alt="Логотип" class="logo">
+                            <h1 class="logo-text">IT Весна</h1>
+                        </div>
+                    </div>
+                    <div class="tab-container">
+                        <div class="left-tab-container" id="tab-container">
+                            <span class="tab" data-tab="Участие" onclick="selectTab('Участие')">Участие</span>
+                            <span class="tab" data-tab="План мероприятий" onclick="selectTab('План мероприятий')">План мероприятий</span>
+                            <span class="tab" data-tab="Положения конкурса" onclick="selectTab('Положения конкурса')">Положения конкурса</span>
+                            <span class="tab" data-tab="Состав жюри" onclick="selectTab('Состав жюри')">Состав жюри</span>
+                            <span class="tab" data-tab="Технические требования" onclick="selectTab('Технические требования')">Технические требования</span>
+                        </div>
+                        <a href="/main/request_page" class="user-panel-button">Подать заявку</a>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Контейнер для вкладок и постов -->
+            <div id="tab-content-container">
+                <div id="Участие" class="tab-content"></div>
+                <div id="План мероприятий" class="tab-content"></div>
+                <div id="Положения конкурса" class="tab-content"></div>
+                <div id="Состав жюри" class="tab-content"></div>
+                <div id="Технические требования" class="tab-content"></div>
+            </div>
+
+        </div>
+    </div>
+    
+    <footer>
+        © Оренбургский государственный университет, 2025
+    </footer>
+
+    <script src="main/user.js"></script>
+</body>
+</html>
